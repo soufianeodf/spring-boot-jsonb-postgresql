@@ -1,0 +1,6 @@
+-- drop table if exists country;
+--
+-- create table country (
+--     id bigint primary key,
+--     cities jsonb
+-- );
