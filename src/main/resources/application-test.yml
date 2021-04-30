@@ -1,0 +1,3 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:55432/app_test
