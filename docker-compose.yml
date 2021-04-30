@@ -5,9 +5,11 @@ services:
     container_name: postgres-container
     ports:
       - 55432:5432/tcp
-    environment:
-      POSTGRES_DB: pg_db
-      POSTGRES_PASSWORD: appdbpassword
     volumes:
       - /var/lib/postgres
       - ./dbscripts/postgres:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_MULTIPLE_DATABASES: app,app.sql:app_test,app_test.sql
+      POSTGRES_HOST_AUTH_METHOD: trust
