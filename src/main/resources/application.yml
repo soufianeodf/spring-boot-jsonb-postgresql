@@ -1,20 +1,21 @@
 spring:
   datasource:
+    url: jdbc:postgresql://localhost:55432/app
     initialization-mode: always
     password: ''
     username: postgres
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: false
+    show-sql: false
     hibernate:
       ddl-auto: none
       show-sql: false
     properties:
       hibernate:
       format_sql: false
-    show-sql: false
   profiles:
-    active: test
+    active: dev
 
 logging:
   level:
